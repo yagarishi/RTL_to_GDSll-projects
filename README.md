@@ -1,0 +1,118 @@
+# RTL-to-GDSII ASIC Design Flow
+
+This repository documents my hands-on learning and implementation of a complete digital ASIC design flow, starting from Register Transfer Level (RTL) design and progressing through verification, synthesis, physical design, and final GDSII generation using open-source EDA tools.
+
+## Objective
+
+The goal of this repository is to develop a practical understanding of modern ASIC design methodologies by implementing digital designs and taking them through a complete RTL-to-GDSII flow.
+
+The repository includes:
+
+* RTL design in Verilog
+* Functional verification using testbenches
+* Waveform analysis
+* Logic synthesis
+* Physical design
+* Timing analysis
+* Design Rule Checking (DRC)
+* Layout Versus Schematic (LVS) verification
+* GDSII generation
+
+---
+
+## Design Flow
+
+```text
+Specification
+    ↓
+RTL Design (Verilog)
+    ↓
+Functional Verification
+    ↓
+Logic Synthesis
+    ↓
+Floorplanning
+    ↓
+Placement
+    ↓
+Clock Tree Synthesis (CTS)
+    ↓
+Routing
+    ↓
+Static Timing Analysis (STA)
+    ↓
+DRC / LVS Verification
+    ↓
+GDSII Generation
+```
+
+---
+
+## Tools Used
+
+### RTL Design & Verification
+
+* Verilog HDL
+* Icarus Verilog
+* GTKWave
+
+### Logic Synthesis
+
+* Yosys
+
+### Physical Design
+
+* OpenLane 2
+* OpenROAD
+
+### Layout Verification
+
+* Magic
+* Netgen
+
+### Layout Visualization
+
+* KLayout
+
+### Platform
+
+* Debian (WSL2)
+* Docker Desktop
+
+##
+
+---
+
+## Skills Demonstrated
+
+* Digital Design using Verilog
+* Testbench Development
+* Functional Verification
+* RTL Analysis
+* Logic Synthesis
+* Physical Design Flow
+* Static Timing Analysis
+* ASIC Design Methodology
+* Linux-based EDA Workflow
+
+---
+
+## Learning Roadmap
+
+Planned implementations include:
+
+* Counters
+* Finite State Machines (FSMs)
+* UART Transmitter/Receiver
+* PWM Controller
+* SPI Controller
+* Arithmetic Logic Unit (ALU)
+* Small Processor Subsystems
+
+Each project will be taken through the complete RTL-to-GDSII flow and documented with implementation reports and design artifacts.
+
+---
+
+## Author
+
+This repository is maintained as part of my ASIC Design and VLSI learning journey, focusing on practical implementation using industry-relevant open-source EDA tools.
