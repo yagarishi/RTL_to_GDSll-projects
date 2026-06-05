@@ -97,22 +97,6 @@ GDSII Generation
 
 ---
 
-## Learning Roadmap
-
-Planned implementations include:
-
-* Counters
-* Finite State Machines (FSMs)
-* UART Transmitter/Receiver
-* PWM Controller
-* SPI Controller
-* Arithmetic Logic Unit (ALU)
-* Small Processor Subsystems
-
-Each project will be taken through the complete RTL-to-GDSII flow and documented with implementation reports and design artifacts.
-
----
-
 ## Author
 
 This repository is maintained as part of my ASIC Design and VLSI learning journey, focusing on practical implementation using industry-relevant open-source EDA tools.
