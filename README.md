@@ -45,7 +45,15 @@ DRC / LVS Verification
     ↓
 GDSII Generation
 ```
+## Project Files
 
+1. RTL Design (`counter.v`)
+2. Testbench (`counter_tb.v`)
+3. RTL Schematic (`rtl_schematic.png`)
+4. Simulation Waveform (`waveform.png`)
+5. OpenLane Configuration (`config.yaml`)
+6. Physical Layout (`counter_layout.png`)
+7. Implementation Metrics (`metrics.csv`)
 ---
 
 ## Tools Used
