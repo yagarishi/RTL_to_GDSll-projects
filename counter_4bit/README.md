@@ -75,8 +75,13 @@ GDSII Generation
 * LVS Reports
 * GDSII Layout
 
-## Layout
-![Counter Layout](images/counter_layout.png)
+## Add 4-bit counter RTL-to-GDSII implementation
+- Designed counter in Verilog
+- Verified functionality using Icarus Verilog and GTKWave
+- Implemented ASIC flow using OpenLane 2 and Sky130
+- Generated GDSII layout
+- Verified DRC and LVS clean design
+- Added RTL schematic, waveform and layout screenshots
 
 ## Conclusion
 Successfully completed a full RTL-to-GDSII ASIC implementation of a 4-bit synchronous counter using the Sky130 PDK, producing a DRC-clean and LVS-clean GDSII layout.
