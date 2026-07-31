@@ -1,0 +1,9 @@
+{
+  "DESIGN_NAME": "alu_8bit_top",
+  "VERILOG_FILES": [
+    "dir::src/alu.v",
+    "dir::src/alu_top.v"
+  ],
+  "CLOCK_PORT": "clk",
+  "CLOCK_PERIOD": 10
+}
