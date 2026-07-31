@@ -1,192 +1,131 @@
-# 8-bit ALU ASIC Design using OpenLane 2
+# 8-Bit ALU: RTL-to-GDSII ASIC Implementation
 
-An 8-bit Arithmetic Logic Unit (ALU) designed in Verilog, functionally verified using Icarus Verilog and GTKWave, and implemented through the complete RTL-to-GDSII ASIC design flow using OpenLane 2 with the Sky130 PDK.
-
----
-
-## Project Overview
-
-This project demonstrates the complete ASIC implementation flow of an 8-bit ALU, starting from RTL design and functional verification to physical implementation and GDSII generation.
-
-The design was synthesized, floorplanned, placed, clock-tree synthesized, routed, and verified using the OpenLane 2 automated RTL-to-GDSII flow.
-
----
-
-## Features
-
-- 8-bit Arithmetic Logic Unit
-- Verilog RTL implementation
-- Functional simulation using Icarus Verilog
-- Waveform verification using GTKWave
-- RTL schematic generation using Yosys
-- Complete ASIC implementation using OpenLane 2
-- Sky130 PDK
-- Successful GDSII generation
-- Passed DRC, LVS and Antenna checks
-
----
-
-## Supported Operations
-
-| Opcode | Operation |
-|---------|-----------|
-| 0x0 | Addition |
-| 0x1 | Subtraction |
-| 0x2 | Increment |
-| 0x3 | Decrement |
-| 0x4 | Bitwise AND |
-| 0x5 | Bitwise OR |
-| 0x6 | Bitwise XOR |
-| 0x7 | Bitwise NOT |
-| 0x8 | Logical Left Shift |
-| 0x9 | Logical Right Shift |
-| 0xA | Rotate Left |
-| 0xB | Rotate Right |
-| 0xC | Compare |
-| 0xD | Pass A |
-| 0xE | Pass B |
-| 0xF | Clear Output |
-
----
+## Overview
+This project demonstrates the complete implementation of an 8-bit Arithmetic Logic Unit (ALU) using an open-source ASIC design flow. The design was developed in Verilog, functionally verified through simulation, synthesized using Yosys, physically implemented using OpenLane 2/OpenROAD, and verified through DRC and LVS before generating the final GDSII layout.
 
 ## Tools Used
+* Verilog HDL
+* Icarus Verilog
+* GTKWave
+* Yosys
+* OpenLane 2
+* OpenROAD
+* Magic
+* Netgen
+* KLayout
+* Sky130 PDK
 
-| Tool | Purpose |
-|------|---------|
-| Verilog | RTL Design |
-| Icarus Verilog | Simulation |
-| GTKWave | Waveform Analysis |
-| Yosys | RTL Synthesis & Schematic |
-| OpenLane 2 | RTL-to-GDSII Flow |
-| OpenROAD | Physical Design |
-| Magic | DRC |
-| Netgen | LVS |
-| KLayout | GDSII Visualization |
-| Sky130A PDK | Technology Library |
+## Design Flow
 
----
-
-## Repository Structure
-
+```text
+RTL Design
+    ↓
+Functional Verification
+    ↓
+Logic Synthesis
+    ↓
+Floorplanning
+    ↓
+Placement
+    ↓
+Clock Tree Synthesis (CTS)
+    ↓
+Routing
+    ↓
+Static Timing Analysis (STA)
+    ↓
+DRC / LVS Verification
+    ↓
+GDSII Generation
 ```
-ALU_8bit/
-│
-├── README.md
-├── config.yaml
-├── alu.v
-├── alu_top.v
-├── alu_tb.v
-├── metrics.csv
-├── rtl_schematic.png
-├── waveform.png
-└── alu_layout.png
-```
 
----
+## ALU Operations
 
-# RTL Schematic
+The ALU supports multiple arithmetic and logical operations including:
+
+- Addition
+- Subtraction
+- Increment
+- Decrement
+- Bitwise AND
+- Bitwise OR
+- Bitwise XOR
+- Bitwise NOT
+- Logical Left Shift
+- Logical Right Shift
+- Rotate Left
+- Rotate Right
+- Compare
+- Pass A
+- Pass B
+- Clear Output
+
+## Design Metrics
+
+| Parameter | Value |
+|---|---|
+| Technology | SKY130 (130 nm open-source PDK) |
+| Standard Cells | 450 |
+| Core Area | 6386.12 µm² |
+| Die Area | 9458.03 µm² |
+| Standard Cell Area | 3484.59 µm² |
+| Core Utilization | 54.57% |
+| Total Power | 531.33 µW |
+| Worst Setup Slack | +1.00 ns (Worst Corner) |
+| Target Clock | 10 ns (100 MHz) |
+
+## Results
+
+| Check | Status |
+|-------------------------|--------------|
+| Functional Verification | ✅ Passed |
+| Synthesis | ✅ Completed |
+| Placement & Routing | ✅ Completed |
+| Setup Timing | ✅ Passed |
+| Hold Timing | ✅ Passed |
+| DRC | ✅ Passed |
+| LVS | ✅ Passed |
+| Antenna Checks | ✅ Passed |
+| GDSII Generation | ✅ Successful |
+
+## Generated Artifacts
+
+* Synthesized Netlist
+* DEF
+* LEF
+* SPEF
+* SDF
+* SPICE Netlist
+* Timing Reports
+* DRC Reports
+* LVS Reports
+* GDSII Layout
+
+## Project Highlights
+
+- Designed an 8-bit ALU in Verilog HDL.
+- Verified functionality using Icarus Verilog and GTKWave.
+- Generated RTL schematic using Yosys.
+- Implemented complete RTL-to-GDSII ASIC flow using OpenLane 2 and Sky130.
+- Successfully completed synthesis, floorplanning, placement, CTS, routing and timing analysis.
+- Generated final GDSII layout.
+- Verified DRC-clean, LVS-clean and Antenna-clean implementation.
+- Added RTL schematic, simulation waveform and final layout images.
+
+## Project Images
+
+### RTL Schematic
 
 ![RTL Schematic](rtl_schematic.png)
 
----
+### Functional Simulation
 
-# Functional Simulation
+![Waveform](rtl_waveform.png)
 
-The ALU functionality was verified using Icarus Verilog. Different ALU operations were applied through the opcode input, and the output was verified using GTKWave.
-
-![Waveform](waveform.png)
-
----
-
-# Physical Layout
-
-The synthesized netlist was successfully implemented using OpenLane 2. The design completed the full RTL-to-GDSII flow without DRC or LVS violations.
+### Final GDSII Layout
 
 ![Layout](alu_layout.png)
 
----
+## Conclusion
 
-# OpenLane Implementation Summary
-
-- RTL Synthesis ✔
-- Floorplanning ✔
-- Placement ✔
-- Clock Tree Synthesis ✔
-- Routing ✔
-- DRC Clean ✔
-- LVS Clean ✔
-- Antenna Clean ✔
-- GDSII Generated ✔
-
----
-
-# Implementation Results
-
-The detailed implementation statistics are available in **metrics.csv**.
-
-Example metrics include:
-
-- Total Standard Cells
-- Core Area
-- Utilization
-- Wire Length
-- Timing Summary
-- Power Estimation
-- DRC Violations
-- LVS Status
-
----
-
-# Running Simulation
-
-Compile the design:
-
-```bash
-iverilog -o alu_sim rtl/alu.v rtl/alu_top.v alu_tb.v
-```
-
-Run simulation:
-
-```bash
-vvp alu_sim
-```
-
-Open waveform:
-
-```bash
-gtkwave dump.vcd
-```
-
----
-
-# ASIC Flow
-
-Run the OpenLane flow:
-
-```bash
-python3 -m openlane config.yaml
-```
-
----
-
-# Results
-
-- Functional Verification Passed
-- RTL Schematic Generated
-- Waveform Verified
-- Successful RTL-to-GDSII Implementation
-- Final GDSII Generated
-- Layout Verified
-- DRC Passed
-- LVS Passed
-- Antenna Check Passed
-
----
-
-## Future Improvements
-
-- Pipelined ALU Architecture
-- Low-Power Optimization
-- Parameterizable Data Width
-- Enhanced Timing Optimization
-- Support for Additional Arithmetic Operations
+Successfully completed the full RTL-to-GDSII ASIC implementation of an 8-bit Arithmetic Logic Unit (ALU) using the Sky130 PDK and OpenLane 2. The design achieved successful timing closure with zero setup and hold violations, passed DRC, LVS and antenna verification, and produced a manufacturable GDSII layout suitable for ASIC implementation.
